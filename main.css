@@ -1,0 +1,92 @@
+:root {
+    --text: #183102;
+    --background: #fdfbfd;
+    --primary: #771bd9;
+    --button: #e9fed7;
+    --accent: #3a5547;
+    
+    --navbar_padding: 1vw;
+    --shadow-color: rgba(151, 79, 165, 0.1);
+    --row_increment: 2em;
+    --column_increment: 1em;
+    --card_border_radius: 0.2em;
+    --navbar: max(12vw, 10em); 
+    --card_width: 13em;
+    --padding: 5vw;
+    --page_padding: 12vw;
+
+    --ff-large: 'Expletus Sans', cursive;
+    --ff-text: 'Hind', sans-serif;
+}
+
+@media only screen and (max-aspect-ratio: 1/1){
+    :root {
+        --navbar: 0vw;
+        --card_width: 2;
+        --padding: 1.5em;
+        --navbar_padding: 0vw;
+        --page_padding: 0vw;
+        
+    }
+}
+
+*{
+    margin: 0;
+    padding: 0;
+}
+
+
+body{
+    background: var(--background);
+}
+
+.side-navbar{
+    height: 100%;
+    width: var(--navbar);
+    position: fixed;
+    z-index: 1;
+    top:0;
+    left: 0;
+    background-color: var(--background);
+    overflow-x: hidden;
+    padding: 60px  var(--navbar_padding) 0em calc(var(--page_padding) + var(--padding));
+    text-align: left;
+    color: var(--text);
+}
+
+.side-navbar img{
+    width: 65%; 
+    height: auto;
+}
+
+.side-navbar h1{
+    font-family: var(--ff-large);
+    color: var(--primary);
+    font-size: max(1.2vw, 1em);
+}
+
+.side-navbar p{
+    font-family: var(--ff-text);
+    color: var(--accent);
+    font-weight: 700;
+    font-size: max(1.2vw, 1em);
+}
+
+.portfolio_container {
+    width: 100%;
+    columns: var(--card_width);
+    column-gap: var(--column_increment);
+    padding: 15px;
+    padding-left: calc(var(--navbar) + var(--padding) + var(--page_padding));
+    padding-right: calc(var(--padding) + var(--page_padding));
+    box-sizing: border-box;
+    
+}
+
+.portfolio_container img{
+    width:100%;
+    box-shadow: 0em 0em 0.4em var(--shadow-color);
+    border-radius: var(--card_border_radius);
+    margin-bottom: var(--row_increment);
+}
+
